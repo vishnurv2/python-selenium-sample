@@ -40,11 +40,11 @@ class LTAutomate(unittest.TestCase):
         gridUrl = "hub.lambdatest.com/wd/hub"
         
         desired_cap = {
-            'platform' : "win10", 
-            'browserName' : "chrome",
-            'version' :  "67.0",
+            'platform' : os.environ['LT_OPERATING_SYSTEM']  , 
+            'browserName' : os.environ['LT_BROWSER_NAME'],
+            'version' :  os.environ['LT_BROWSER_VERSION'],
             # Resolution of machine
-            "resolution": "1024x768", 
+            "resolution": os.environ['LT_RESOLUTION'], 
             "name": "LambdaTest python google search test ",
             "build": "LambdaTest python google search build",
             "network": True,
