@@ -2,6 +2,7 @@ import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import os
 
 
 
@@ -32,9 +33,9 @@ class LTAutomate(unittest.TestCase):
         -------
         """
         # username: Username can be found at automation dashboard
-        username="{username}"  
+        username= os.environ['LT_USERNAME']  
         # accessToken:  AccessToken can be genarated from automation dashboard or profile section
-        accessToken="{accessToken}"
+        accessToken=os.environ['LT_ACCESS_KEY']
         # gridUrl: gridUrl can be found at automation dashboard
         gridUrl = "hub.lambdatest.com/wd/hub"
         
